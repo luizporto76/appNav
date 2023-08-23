@@ -6,7 +6,9 @@ const verifyJWT = require('../middlewares/authorizator');
 
 router.post('/', verifyJWT, eventoValidator.criar(), eventoController.criar);
 
-router.get('/', verifyJWT, eventoController.encontrarTodos);
+router.get('/', eventoController.encontrarTodos);
+
+//router.get('/', verifyJWT, eventoController.encontrarTodos);
 
 router.get('/:id', verifyJWT, eventoValidator.encontrarPorId(), eventoController.encontrarPorId);
 
